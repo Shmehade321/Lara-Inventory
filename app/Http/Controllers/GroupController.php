@@ -12,4 +12,20 @@ class GroupController extends Controller
         $groups = Group::latest()->get();
         return view('groups.index', ['groups' => $groups]);
     }
+
+    public function create()
+    {
+        $permissions = [
+            'User' => ['createUser', 'viewUser', 'updateUser', 'deleteUser'],
+            'Group' => ['createGroup', 'viewGroup', 'updateGroup', 'deleteGroup'],
+            'Brand' => ['createBrand', 'viewBrand', 'updateBrand', 'deleteBrand'],
+            'Category' => ['createCategory', 'viewCategory', 'updateCategory', 'deleteCategory']
+        ];
+        return view('groups.create', ['permissions' => $permissions]);
+    }
+
+    public function store(Request $request)
+    {
+        dd($request);
+    }
 }

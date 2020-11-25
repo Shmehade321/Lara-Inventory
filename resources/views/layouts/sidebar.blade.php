@@ -41,19 +41,19 @@
     </li>
 
     <li class="nav-item active">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="{{route('categories')}}">
             <i class="fas fa-fw fa-users"></i>
             <span>Category</span></a>
     </li>
 
     <li class="nav-item active">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="{{route('stores')}}">
             <i class="fas fa-fw fa-users"></i>
             <span>Stores</span></a>
     </li>
 
     <li class="nav-item active">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="{{route('attributes')}}">
             <i class="fas fa-fw fa-users"></i>
             <span>Attributes</span></a>
     </li>

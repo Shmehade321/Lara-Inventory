@@ -5,6 +5,9 @@ use \App\Http\Controllers\DashboardController;
 use \App\Http\Controllers\UserController;
 use \App\Http\Controllers\GroupController;
 use \App\Http\Controllers\BrandController;
+use \App\Http\Controllers\CategoryController;
+use \App\Http\Controllers\StoreController;
+use \App\Http\Controllers\AttributeController;
 use \App\Http\Controllers\Auth\LoginController;
 
 /*
@@ -27,5 +30,13 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard
 Route::get('/users', [UserController::class, 'index'])->name('users');
 
 Route::get('/groups', [GroupController::class, 'index'])->name('groups');
+Route::get('/group/create', [GroupController::class, 'create'])->name('group/create');
+Route::post('/group/create', [GroupController::class, 'store'])->name('group/create');
 
 Route::get('/brands', [BrandController::class, 'index'])->name('brands');
+
+Route::get('/categories', [CategoryController::class, 'index'])->name('categories');
+
+Route::get('/stores', [StoreController::class, 'index'])->name('stores');
+
+Route::get('/attributes', [AttributeController::class, 'index'])->name('attributes');

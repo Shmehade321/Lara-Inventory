@@ -3,14 +3,7 @@
 
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <div class="row">
-                <div class="col">
-                    <h6 class="m-0 font-weight-bold text-primary">Groups</h6>
-                </div>
-                <div class="col"><a href="{{route('group/create')}}" class="float-right"><i class="fas fa-plus"></i></a></div>
-            </div>
-
-
+            <h6 class="m-0 font-weight-bold text-primary">Categories</h6>
         </div>
         <div class="card-body">
             <div class="table-responsive">
@@ -18,7 +11,6 @@
                     <thead>
                     <tr>
                         <th>Name</th>
-                        <th>Permissions</th>
                         <th>Created At</th>
                         <th>Updated At</th>
                         <th>Deleted At</th>
@@ -26,14 +18,13 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @if($groups->count())
-                        @foreach($groups as $group)
+                    @if($categories->count())
+                        @foreach($categories as $category)
                             <tr>
-                                <td>{{$group->name}}</td>
-                                <td>{{implode(",", unserialize($group->permissions))}}</td>
-                                <td>{{$group->created_at->format('m/d/Y g:i A')}}</td>
-                                <td>{{$group->updated_at->format('m/d/Y g:i A')}}</td>
-                                <td>{{ ($group->deleted_at) ? $group->deleted_at->format('m/d/Y g:i A') : "-"}}</td>
+                                <td>{{$category->name}}</td>
+                                <td>{{$category->created_at->format('m/d/Y g:i A')}}</td>
+                                <td>{{$category->updated_at->format('m/d/Y g:i A')}}</td>
+                                <td>{{ ($category->deleted_at) ? $category->deleted_at->format('m/d/Y g:i A') : "-"}}</td>
                                 <td>
                                     <a class="btn btn-sm btn-secondary"><i class="fa fa-eye"></i></a>
                                     <a class="btn btn-sm btn-info"><i class="far fa-edit"></i></a>
